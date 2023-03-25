@@ -28,6 +28,17 @@ const User = () => {
         }
     }
 
+    async function deleteUser() {
+        try {
+            const res = await api.delete(`/users/${userObject.id}`);
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            navigate("/");
+        }
+    }
+
     return (
         <Wrapped>
             <div className="user-info">
@@ -51,6 +62,7 @@ const User = () => {
                         );
                     })}
                 <button onClick={() => createAccount()}>Create Account</button>
+                <button onClick={() => deleteUser()}>Delete User</button>
             </div>
         </Wrapped>
     );
