@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import HomePage from "./pages/Home.page.js";
+import HomePage from "./pages/home.page.js";
 import UserPage from "./pages/User.page.js";
 import AccountPage from "./pages/Account.page.js";
 import CreateUserPage from "./pages/CreateUser.page.js";
