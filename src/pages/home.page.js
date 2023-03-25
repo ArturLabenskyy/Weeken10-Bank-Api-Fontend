@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import api from "../api/bank.api.js";
-import UserInfo from "../components/UserInfo/UserInfo.component";
+import UserInfo from "../components/UserInfo/UserInfo.component.js";
 import Navbar from "../components/Navbar/Navbar.component.js";
 
 const HomePage = () => {
