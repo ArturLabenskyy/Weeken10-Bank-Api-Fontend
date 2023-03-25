@@ -12,7 +12,8 @@ function App() {
                 const response = await axios.get(
                     "https://bank-api.cyclic.app/api/v1/accounts"
                 );
-                setData(response.data);
+                console.log("response data is: ", response.data);
+                setData(response.data.data);
             } catch (error) {
                 console.log(error);
             }
@@ -21,12 +22,11 @@ function App() {
         fetchData();
     }, []);
 
-    console.log(data.data);
+    console.log(data);
     return (
         <div>
             <h1>Hello, Artur!!!</h1>
-            {data.data.map((el) => {
-                console.log(el._id);
+            {data.map((el) => {
                 return <p> {el._id} </p>;
             })}
         </div>
