@@ -61,7 +61,9 @@ const User = () => {
                             </div>
                         );
                     })}
-                <button onClick={() => createAccount()}>Create Account</button>
+                <button onClick={() => createAccount()} className="some-class">
+                    Create Account
+                </button>
                 <button onClick={() => deleteUser()}>Delete User</button>
             </div>
         </Wrapped>
