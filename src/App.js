@@ -1,34 +1,40 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import HomePage from "./pages/Home.page.js";
+import UserPage from "./pages/User.page.js";
+import AccountPage from "./pages/Account.page.js";
+import CreateUserPage from "./pages/CreateUser.page.js";
 
 import "./style.css";
 
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <HomePage />,
+    },
+    {
+        path: "/users/:id",
+        element: <UserPage />,
+    },
+    {
+        path: "/accounts/:id",
+        element: <AccountPage />,
+    },
+    {
+        path: "/create-user",
+        element: <CreateUserPage />,
+    },
+    {
+        path: "*",
+        element: <div className="error-page">Error!!!!!</div>,
+    },
+]);
+
 function App() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(
-                    "https://bank-api.cyclic.app/api/v1/accounts"
-                );
-                console.log("response data is: ", response.data);
-                setData(response.data.data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    console.log(data);
     return (
-        <div>
-            <h1>Hello, Artur!!!</h1>
-            {data.map((el) => {
-                return <p> {el._id} </p>;
-            })}
+        <div className="main">
+            <RouterProvider router={router} />
         </div>
     );
 }

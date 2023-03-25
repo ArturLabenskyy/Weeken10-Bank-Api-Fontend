@@ -1,0 +1,12 @@
+#root {
+    height: 100%;
+    width: 100vw;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 3rem;
+}
