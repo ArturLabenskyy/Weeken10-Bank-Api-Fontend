@@ -19,7 +19,7 @@ const HomePage = () => {
             }
         }
         getAllUsers();
-    }, []);
+    }, [setUsers]);
 
     return (
         <div>
